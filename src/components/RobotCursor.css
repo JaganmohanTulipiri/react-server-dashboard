@@ -1,0 +1,81 @@
+@media (hover: hover) and (pointer: fine) {
+  body,
+  body * {
+    cursor: none !important;
+  }
+
+  body.robot-cursor-interactive,
+  body.robot-cursor-interactive * {
+    cursor: revert !important;
+  }
+}
+
+.robot-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  display: flex;
+  width: 52px;
+  height: 40px;
+  margin-left: -10px;
+  margin-top: -20px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid rgba(103, 232, 249, 0.9);
+  border-radius: 7px;
+  background: linear-gradient(145deg, rgba(8, 47, 73, 0.9), rgba(8, 145, 178, 0.48));
+  box-shadow: 0 0 10px #22d3ee, inset 0 0 12px rgba(34, 211, 238, 0.3);
+  backdrop-filter: blur(4px);
+  pointer-events: none;
+}
+
+.robot-cursor-hidden {
+  visibility: hidden;
+}
+
+.robot-cursor img {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  padding: 2px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 5px #22d3ee);
+}
+
+.robot-glow {
+  position: absolute;
+  inset: 2px;
+  border: 1px solid rgba(165, 243, 252, 0.5);
+  border-radius: 5px;
+  background: #06b6d4;
+  opacity: 0.12;
+  filter: blur(7px);
+  animation: robot-glow 1.8s ease-in-out infinite;
+}
+
+@keyframes robot-glow {
+  0%,
+  100% {
+    transform: scale(0.96);
+    opacity: 0.08;
+  }
+  50% {
+    transform: scale(1.04);
+    opacity: 0.3;
+  }
+}
+
+@media (hover: none), (pointer: coarse) {
+  .robot-cursor {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .robot-glow {
+    animation: none;
+  }
+}

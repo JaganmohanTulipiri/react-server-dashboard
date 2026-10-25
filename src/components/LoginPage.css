@@ -1,0 +1,487 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+.ops-login {
+  min-height: 100vh;
+  min-height: 100svh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 52px 5% 32px;
+  background: #030a17;
+  color: #f7faff;
+  font-family: "Inter", sans-serif;
+  isolation: isolate;
+}
+
+.ops-video,
+.ops-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.ops-video {
+  z-index: -3;
+  object-fit: cover;
+}
+
+.ops-overlay {
+  z-index: -2;
+  background:
+    radial-gradient(ellipse at 65% 45%, rgba(0, 112, 255, 0.15), transparent 50%),
+    linear-gradient(90deg, rgba(2, 8, 20, 0.95), rgba(3, 12, 30, 0.7) 55%, rgba(2, 8, 20, 0.82));
+  backdrop-filter: blur(2px);
+}
+
+.ops-topbar {
+  position: absolute;
+  top: 18px;
+  left: 5%;
+  right: 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.ops-brand-stack {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.ops-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: #edf8ff;
+  font-size: clamp(2rem, 2vw, 2.8rem);
+  font-weight: 800;
+  line-height: 1;
+  text-decoration: none;
+  letter-spacing: -0.06em;
+}
+
+.ops-brand > span:last-child {
+  display: inline-flex;
+  align-items: baseline;
+}
+
+.ops-brand > span:last-child > span,
+.ops-logo h2 span {
+  color: #25aaff;
+}
+
+.ops-brand-icon {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(69, 174, 255, 0.5);
+  border-radius: 10px;
+  color: #38bdf8;
+  background: rgba(16, 75, 130, 0.2);
+  box-shadow: inset 0 0 18px rgba(37, 170, 255, 0.1);
+  font-size: 18px;
+}
+
+.ops-top-label,
+.ops-eyebrow {
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: #c5d7f4;
+}
+
+.ops-top-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22e6a0;
+  box-shadow: 0 0 12px #22e6a0;
+}
+
+.ops-layout {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(320px, 440px);
+  align-items: center;
+  gap: clamp(30px, 4vw, 72px);
+}
+
+.ops-intro {
+  max-width: 520px;
+}
+
+.ops-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(92, 175, 255, 0.28);
+  border-radius: 999px;
+  padding: 10px 18px;
+  background: rgba(18, 42, 64, 0.1);
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #dfefff;
+}
+
+.ops-intro h1 {
+  margin: 24px 0 18px;
+  font-size: clamp(38px, 4.2vw, 58px);
+  line-height: 1.12;
+  letter-spacing: -2px;
+  font-weight: 800;
+}
+
+.ops-intro h1 span {
+  display: block;
+  color: #27aaff;
+  text-shadow: 0 0 35px rgba(39, 170, 255, 0.25);
+}
+
+.ops-description {
+  max-width: 450px;
+  color: #b4c4dc;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.ops-features {
+  display: grid;
+  gap: 11px;
+  margin-top: 28px;
+}
+
+.ops-feature {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 11px 14px;
+  border: 1px solid rgba(151, 190, 255, 0.1);
+  border-radius: 14px;
+  background: rgba(10, 24, 47, 0.42);
+  transition: background 0.2s, transform 0.2s, border-color 0.2s;
+}
+
+.ops-feature:hover {
+  transform: translateX(4px);
+  background: rgba(23, 57, 95, 0.52);
+  border-color: rgba(76, 170, 255, 0.35);
+}
+
+.feature-icon {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  font-size: 24px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.feature-icon.cyan {
+  color: #22d3ee;
+  border: 1px solid #087f9c;
+}
+.feature-icon.purple {
+  color: #b69aff;
+  border: 1px solid #6942d7;
+}
+.feature-icon.green {
+  color: #34e6a0;
+  border: 1px solid #12845b;
+}
+.feature-icon.orange {
+  color: #ffba67;
+  border: 1px solid #aa6522;
+}
+.feature-icon.blue {
+  color: #4cb6ff;
+  border: 1px solid #176ab7;
+}
+
+.ops-feature h3 {
+  font-size: 13px;
+  margin: 0 0 6px;
+  font-weight: 600;
+}
+
+.ops-feature p {
+  font-size: 11px;
+  margin: 0;
+  color: #92a7c5;
+}
+
+.ops-glass-card {
+  width: 100%;
+  padding: 28px clamp(20px, 2.6vw, 34px);
+  border: 1px solid rgba(192, 220, 255, 0.45);
+  border-radius: 26px;
+  background: linear-gradient(145deg, rgba(24, 50, 83, 0.72), rgba(6, 20, 42, 0.8));
+  box-shadow:
+    0 25px 90px rgba(0, 0, 0, 0.4),
+    0 0 45px rgba(26, 134, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+.ops-logo {
+  text-align: center;
+}
+
+.ops-cloud-icon {
+  font-size: 48px;
+  line-height: 1.1;
+  color: #27aaff;
+  text-shadow: 0 0 30px rgba(39, 170, 255, 0.5);
+}
+
+.ops-logo h2 {
+  margin: 5px 0;
+  font-size: 38px;
+  letter-spacing: -2px;
+  font-weight: 800;
+}
+
+.ops-logo > p {
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: #c4d5ed;
+  margin: 12px 0;
+}
+
+.ops-capabilities {
+  text-align: center;
+  margin: 16px 0 22px;
+  font-size: 11px;
+  color: #9fb4d1;
+  line-height: 1.8;
+}
+
+.ops-capabilities b {
+  color: #37aaff;
+  padding: 0 5px;
+}
+
+.ops-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.ops-form label {
+  margin: 0 0 8px;
+  font-size: 12px;
+  color: #dce8fa;
+}
+
+.ops-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 52px;
+  padding: 0 15px;
+  margin-bottom: 18px;
+  border: 1px solid rgba(114, 167, 237, 0.43);
+  border-radius: 13px;
+  background: rgba(151, 186, 235, 0.08);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.ops-input-wrap:focus-within {
+  border-color: #35aaff;
+  box-shadow: 0 0 0 3px rgba(53, 170, 255, 0.13);
+}
+
+.ops-input-wrap > span {
+  color: #8dbfff;
+  font-size: 20px;
+}
+
+.ops-input-wrap input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  color: #fff;
+  background: transparent;
+  font: inherit;
+  font-size: 13px;
+}
+
+.ops-input-wrap input::placeholder {
+  color: #91a5c4;
+}
+
+.ops-show-password {
+  border: 0;
+  background: transparent;
+  color: #8dbfff;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.ops-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 56px;
+  margin-top: 5px;
+  border: 0;
+  border-radius: 13px;
+  background: linear-gradient(100deg, #09b8ed, #2368ff 58%, #8537f5);
+  color: white;
+  font: inherit;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 10px 32px rgba(30, 104, 255, 0.26);
+  transition: transform 0.2s, filter 0.2s;
+}
+
+.ops-submit:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.12);
+}
+
+.ops-submit:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.ops-error {
+  color: #ffaaa9;
+  font-size: 12px;
+  margin: -5px 0 15px;
+}
+
+.ops-security {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 28px;
+  color: #c3d3e9;
+  font-size: 12px;
+}
+
+.ops-security span {
+  color: #5ab7ff;
+  font-size: 20px;
+}
+
+.ops-footer {
+  position: absolute;
+  bottom: 20px;
+  left: 6%;
+  right: 6%;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  color: #8298b6;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+@media (min-width: 1500px) {
+  .ops-login {
+    padding-left: 8%;
+    padding-right: 8%;
+  }
+}
+
+@media (max-width: 900px) {
+  .ops-login {
+    padding: 100px 5% 70px;
+  }
+
+  .ops-layout {
+    max-width: 550px;
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .ops-intro {
+    display: none;
+  }
+
+  .ops-glass-card {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .ops-login {
+    padding: 85px 16px 65px;
+  }
+
+  .ops-topbar {
+    left: 18px;
+    right: 18px;
+    top: 20px;
+  }
+
+  .ops-brand {
+    font-size: 22px;
+  }
+
+  .ops-brand-icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .ops-top-label {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  .ops-glass-card {
+    padding: 30px 22px;
+    border-radius: 20px;
+  }
+
+  .ops-logo h2 {
+    font-size: 37px;
+  }
+
+  .ops-logo > p {
+    font-size: 8px;
+    letter-spacing: 3px;
+  }
+
+  .ops-footer {
+    left: 18px;
+    right: 18px;
+    font-size: 8px;
+  }
+
+  .ops-footer span:last-child {
+    text-align: right;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ops-feature,
+  .ops-submit {
+    transition: none;
+  }
+}

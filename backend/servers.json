@@ -1,0 +1,38 @@
+[
+  {
+    "id": "dev-api",
+    "name": "Development API",
+    "environment": "DEV",
+    "project": "my-api",
+    "host": "YOUR_DEV_SERVER_IP",
+    "port": 22,
+    "username": "deploy",
+    "privateKeyPath": "/home/ubuntu/.ssh/opsone_deploy",
+    "hostKeySha256": "REPLACE_WITH_VERIFIED_SHA256_FINGERPRINT",
+    "remotePath": "/opt/apps/my-api",
+    "branch": "develop",
+    "deployMethod": "pm2",
+    "buildCommand": "npm run build",
+    "pm2App": "my-api",
+    "composeFile": "compose.yaml",
+    "deployScript": "deploy.sh"
+  },
+  {
+    "id": "uat-web",
+    "name": "UAT Web",
+    "environment": "UAT",
+    "project": "my-web",
+    "host": "YOUR_UAT_SERVER_IP",
+    "port": 22,
+    "username": "deploy",
+    "privateKeyPath": "/home/ubuntu/.ssh/opsone_deploy",
+    "hostKeySha256": "REPLACE_WITH_VERIFIED_SHA256_FINGERPRINT",
+    "remotePath": "/opt/apps/my-web",
+    "branch": "uat",
+    "deployMethod": "docker-compose",
+    "buildCommand": "npm run build",
+    "pm2App": "my-web",
+    "composeFile": "compose.yaml",
+    "deployScript": "deploy.sh"
+  }
+]
